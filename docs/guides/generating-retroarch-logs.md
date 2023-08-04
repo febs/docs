@@ -22,11 +22,17 @@ The answer to this dilemma involves "logs", which RetroArch and other libretro s
 ### Generating Logs in Linux
 
 #### RetroArch logs
+##### If installed via **apt**
 1. Open a terminal.
-2. Navigate to the RetroArch folder with the `cd` command.
-3. Start RetroArch in 'verbose' mode with this command:<br />
- `retroarch -v --log-file retroarch.log` or `retroarch -v >> retroarch.log 2>&1`
-4. Once you exit RetroArch, a file called `retroarch.log` should be stored in the folder.
+2. Start RetroArch in 'verbose' mode with this command:<br />
+ `retroarch -v --log-file retroarch.log` or `retroarch -v >> ~/retroarch.log 2>&1`
+3. Once you exit RetroArch, a file called `retroarch.log` should be stored in the file retroarch.log in your home directory.
+
+##### If installed via **flatpak**
+1. Open a terminal.
+2. Start RetroArch in 'verbose' mode with this command:<br />
+ `/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=retroarch org.libretro.RetroArch -v --log-file ~/retroarch.log`
+3. Once you exit RetroArch, a file called `retroarch.log` should be stored in the file retroarch.log in your home directory.
 
 #### Graphic card logs
 `lspci -nnk | grep -A 3 VGA` will give information about your graphic card.
